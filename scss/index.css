@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #C5E4E7;
+}
+
+.container {
+  --display: flex;
+  background-color: white;
+  width: 375px;
+  height: 789px;
+  border-radius: 25px 25px 0 0;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 17px;
+  column-gap: 17px;
+  row-gap: 16px;
+}
+
+.block {
+  padding: 32px 32px 0 32px;
+}
+
+.block--darkblock {
+  background-color: #00474B;
+  border-radius: 15px;
+  margin: 37px 22px 24px 24px;
+}
+
+.title {
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.title--grey {
+  color: #5E7A7D;
+}
+
+.title--white {
+  color: #FFF;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #00474B;
+  border-radius: 5px;
+  font-family: "Space Mono";
+  font-weight: bold;
+  font-size: 24px;
+  height: 48px;
+  flex: 1 0 45%;
+}
+
+.button__reset {
+  background-color: #26C2AE;
+  color: #00474B;
+  width: 281px;
+  height: 48px;
+  border-radius: 5px;
+  font-family: "Space Mono";
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.persontext {
+  font-family: "Space Mono";
+  font-size: 13px;
+  font-weight: bold;
+  color: #7F9D9F;
+}
+
+/*# sourceMappingURL=index.css.map */
