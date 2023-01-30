@@ -8,7 +8,6 @@ body {
 }
 
 .container {
-    --display: flex;
     background-color: white;
     width: 375px;
     height: 789px;
@@ -30,7 +29,8 @@ body {
     &--darkblock {
         background-color: #00474B;
         border-radius: 15px;
-        margin: 37px 22px 24px 24px;
+        margin: 37px 22px 23px 24px;
+        padding-bottom: 1px;
     }
 }
 
@@ -55,24 +55,22 @@ body {
     color: white;
     background-color: #00474B;
     border-radius: 5px;
+    border: none;
     font-family: 'Space Mono';
     font-weight: bold;
     font-size: 24px;
     height: 48px;
-    flex: 1 0 45%;
+
+    &__percentage {
+        flex: 45%;
+    }
 
     &__reset {
         background-color: #26C2AE;
         color: #00474B;
         width: 281px;
-        height: 48px;
-        border-radius: 5px;
-        font-family: 'Space Mono';
-        font-weight: bold;
         font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin: 32px 22px 24px 24px;
     }
 
 }
