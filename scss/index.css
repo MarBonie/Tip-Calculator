@@ -33,6 +33,40 @@ body {
   margin: 37px 22px 23px 24px;
   padding-bottom: 1px;
 }
+.block--display {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.display {
+  grid-row: span 2;
+  grid-column: span 1;
+  height: 47px;
+  font-family: "Space Mono";
+  font-size: 32px;
+  font-weight: bold;
+  color: #26C2AE;
+  text-align: right;
+}
+
+.insert {
+  background-color: #f3f9fa;
+  border-radius: 5px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  flex: 100%;
+  padding-left: 17.48px;
+  color: #00474B;
+  font-family: "Space Mono";
+  font-size: 24px;
+  font-weight: bold;
+}
+.insert--text {
+  justify-content: right;
+  padding-right: 19.24px;
+}
 
 .title {
   font-family: "Space Mono";
