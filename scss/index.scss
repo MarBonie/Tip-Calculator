@@ -3,8 +3,31 @@
     padding: 0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
 body {
     background-color: #C5E4E7;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .container {
@@ -67,7 +90,10 @@ body {
 
     &--text {
         justify-content: right;
-        padding-right: 19.24px;
+        border: none;
+        text-align: right;
+        box-sizing: border-box;
+        width: 100%;
     }
 }
 
