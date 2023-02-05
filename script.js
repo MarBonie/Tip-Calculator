@@ -1,70 +1,30 @@
 // Variables
-let currentInput = document.querySelector('.currentInput');
-let answerScreen = document.querySelector('.answerScreen');
-let buttons = document.querySelectorAll('button');
-let erasebtn = document.querySelector('#erase');
-let clearbtn = document.querySelector('#clear');
-let evaluate = document.querySelector('#evaluate');
+let billValue = document.querySelector('.billvalue');
+let numberofpeople = document.querySelector('.numberofpeople');
+let button__reset = document.querySelector('.button__reset');
+let tipperson = document.querySelector('.tippreson');
+let totalperson = document.querySelector('.totalperson');
+let button__percentage = document.querySelector('.button__percentage');
 
-let billValue = dcoument.querySelector('.billvalue');
-let numberofpeople = dcoument.querySelector('.numberofpeople');
-let button__reset = dcoument.querySelector('.button__reset');
-let tipperson = dcoument.querySelector('.tippreson');
-let totalperson = dcoument.querySelector('.totalperson');
 
-// Calculator Display
-let realTimeScreenValue = []
+//Current tip percentage
+let currentTipPercentage = [];
 
-// To Clear
+button__percentage.addEventListener("click", () => {
+    currentTipPercentage = button__percentage.value;
+})
 
 button__reset.addEventListener("click", () => {
 
-    realTimeScreenValue = [''];
-    tipperson.innerHTML = 0;
-    totalperson.innerHTML = 0;
-    totalperson.className = 'totalperson';
-    tipperson.className = 'tipperson';
+    numberofpeople.value = 1;
+
+    billValue.value = currentTipPercentage;
 })
 
-// Get value of any button clicked and display to the screen
+function calculate() {
+    if (billValue.value && numberofpeople.value) {
+        return tipperson.value = (billValue.value / numberofpeople.value);
+    }
+}
 
-buttons.forEach((btn) => {
-
-
-    btn.addEventListener("click", () => {
-        // when clicked button is not erased button 
-        if (!btn.id.match('erase')) {
-            // To display value on btn press
-            realTimeScreenValue.push(btn.value)
-            totalperson.innerHTML = realTimeScreenValue.join('');
-
-            // To evaluate answer in real time
-            if (btn.classList.contains('num_btn')) {
-
-                answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
-
-            }
-
-        }
-
-        // When erase button is clicked
-        if (btn.id.match('erase')) {
-            realTimeScreenValue.pop();
-            currentInput.innerHTML = realTimeScreenValue.join('');
-            answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
-        }
-
-        // When clicked button is evaluate button
-        if (btn.id.match('evaluate')) {
-            currentInput.className = 'answerScreen';
-            answerScreen.className = 'currentInput';
-            answerScreen.style.color = "white";
-        }
-
-        // To prevent undefined error in screen
-        if (typeof eval(realTimeScreenValue.join('')) == 'undefined') {
-            answerScreen.innerHTML = 0
-        }
-
-    })
-})
+totalperson.innerHTML = 5344;
