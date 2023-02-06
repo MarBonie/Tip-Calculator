@@ -21,6 +21,37 @@ input:focus {
   outline: none;
 }
 
+::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
 body {
   background-color: #C5E4E7;
 }
@@ -120,7 +151,7 @@ body {
   height: 48px;
 }
 .button__percentage {
-  flex: 45%;
+  flex: 40%;
 }
 .button__reset {
   background-color: #26C2AE;
@@ -128,6 +159,10 @@ body {
   width: 281px;
   font-size: 20px;
   margin: 32px 22px 24px 24px;
+}
+.button__custom {
+  width: 100%;
+  text-align: center;
 }
 
 .persontext {
