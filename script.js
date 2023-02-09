@@ -10,8 +10,10 @@ let button__percentage = document.querySelectorAll('.button__percentage');
 let CurrentPercenateTip = [];
 
 button__percentage.forEach(element => element.addEventListener("click", () => {
-    tipperson.innerHTML = ((billValue.value / numberofpeople.value) * 0.01 * element.value).toFixed(2);
-    totalperson.innerHTML = (Number((billValue.value / numberofpeople.value)) + Number(tipperson.innerHTML)).toFixed(2);
+    numberofpeople.value == 0 ? tipperson.innerHTML = 0 : tipperson.innerHTML = ((billValue.value / numberofpeople.value) * 0.01 * element.value).toFixed(2);
+    numberofpeople.value == 0 ? totalperson.innerHTML = 0 : totalperson.innerHTML = (Number((billValue.value / numberofpeople.value)) + Number(tipperson.innerHTML)).toFixed(2);
+    if (tipperson.innerHTML == 0.00) tipperson.innerHTML = 0;
+    if (totalperson.innerHTML == 0.00) totalperson.innerHTML = 0;
 }));
 
 
