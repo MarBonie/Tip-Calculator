@@ -58,7 +58,7 @@ body {
     background-color: white;
     width: 375px;
     height: 789px;
-    border-radius: 25px 25px 0 0;
+    border-radius: 25px;
     margin: auto;
     margin-top: 20px;
 }
@@ -176,7 +176,7 @@ body {
     }
 }
 
-button:focus {
+.active {
     background: #9FE8DF;
     color: #00474B;
 }
