@@ -176,6 +176,12 @@ body {
   color: #00474B;
 }
 
+.activeCustomButton {
+  outline: none !important;
+  border: 2px solid #26C2AE;
+  overflow: hidden;
+}
+
 .persontext {
   font-family: "Space Mono";
   font-size: 13px;

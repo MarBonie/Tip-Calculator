@@ -38,19 +38,19 @@
         <div class="block">
             <div class="title title--grey">Number of People</div>
             <div class="insert">
-                <input type="number" max="10" class="insert insert--text numberofpeople insert--background_person"
-                    value="1" />
+                <input type="number" oninput="this.value = Math.round(this.value);"
+                    class="insert insert--text numberofpeople insert--background_person" value="1" />
             </div>
         </div>
         <div class="block--darkblock">
             <div class="block block--display">
                 <div class="title title--white">Tip Ammount</div>
-                <div class="display tipperson">0</div>
+                <div class="display tipperson">$0</div>
                 <div class="persontext">/ person</div>
             </div>
             <div class="block block--display">
                 <div class="title title--white">Total</div>
-                <div class="display totalperson">0</div>
+                <div class="display totalperson">$0</div>
                 <div class="persontext">/ person</div>
             </div>
             <button type="button" class="button button__reset">RESET</button>

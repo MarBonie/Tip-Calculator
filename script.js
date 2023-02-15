@@ -22,14 +22,26 @@ tipButton.forEach((element) =>
     })
 );
 
-input.forEach((element) =>
-    element.addEventListener("input", () => {
-        calculateOutput();
-    })
+numberofpeople.addEventListener("input", () => {
+    calculateOutput();
+}
 );
+
+billValue.addEventListener("input", () => {
+    calculateOutput();
+}
+);
+
+customPercentage.addEventListener("focus", (e) => {
+    CurrentPercenateTip = +e.target.value;
+    customPercentage.classList.add('activeCustomButton');
+    removeActive();
+    calculateOutput();
+})
 
 customPercentage.addEventListener("input", (e) => {
     CurrentPercenateTip = +e.target.value;
+    removeActive();
     calculateOutput();
 })
 
@@ -56,14 +68,13 @@ function calculateOutput() {
             Number(tipPersonAmount)
         ).toFixed(2);
     }
-    if (tipPersonAmount == 0.00) tipPersonAmount = 0;
-    if (totalPersonAmount == 0.00) totalPersonAmount = 0;
 
-    tipPerson.innerHTML = tipPersonAmount;
-    totalPerson.innerHTML = totalPersonAmount;
+    tipPerson.innerHTML = '$' + tipPersonAmount;
+    totalPerson.innerHTML = '$' + totalPersonAmount;
 }
 
 function removeActive() {
     for (let i = 0; i < tipButton.length; i++)
         tipButton[i].classList.remove("active");
+    customPercentage.classList.remove("activeCustomButton");
 }
