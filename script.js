@@ -7,7 +7,7 @@ const totalPerson = document.querySelector('.totalperson');
 const tipButton = document.querySelectorAll('.button__percentage');
 const input = document.querySelectorAll('input');
 const customPercentage = document.querySelector('.button__custom');
-const zeroMessage = document.querySelector('.zeroMessage');
+const zeroMessage = document.querySelector('.zerovalue');
 
 // Variable to contain current % of tip
 let CurrentPercenateTip = 0;
@@ -26,13 +26,11 @@ tipButton.forEach((element) =>
 
 numberOfPeople.addEventListener("input", () => {
     if (numberOfPeople.value == 0) {
-        zeroMessage.classList.add("zeroValue");
-        zeroMessage.classList.remove("whiteColor");
-        numberOfPeople.classList.add("zeroValueBorder");
+        zeroMessage.classList.add("zerovalue__visible");
+        numberOfPeople.classList.add("zerovalueborder");
     } else {
-        zeroMessage.classList.remove("zeroValue");
-        zeroMessage.classList.add("whiteColor");
-        numberOfPeople.classList.remove("zeroValueBorder");
+        zeroMessage.classList.remove("zerovalue__visible");
+        numberOfPeople.classList.remove("zerovalueborder");
     }
     calculateOutput();
 }

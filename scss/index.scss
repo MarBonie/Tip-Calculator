@@ -199,14 +199,15 @@ body {
     justify-content: space-between;
 }
 
-.zeroValue {
+.zerovalue {
     color: #E17457;
+    visibility: hidden;
+
+    &__visible {
+        visibility: visible;
+    }
 }
 
-.zeroValueBorder {
+.zerovalueborder {
     border-color: #E17457;
-}
-
-.whiteColor {
-    color: #FFF;
 }
