@@ -1,12 +1,13 @@
 // Variables
 const billValue = document.querySelector('.billvalue');
-const numberofpeople = document.querySelector('.numberofpeople');
+const numberOfPeople = document.querySelector('.numberofpeople');
 const buttonReset = document.querySelector('.button__reset');
 const tipPerson = document.querySelector('.tipperson');
 const totalPerson = document.querySelector('.totalperson');
 const tipButton = document.querySelectorAll('.button__percentage');
 const input = document.querySelectorAll('input');
 const customPercentage = document.querySelector('.button__custom');
+const zeroMessage = document.querySelector('.zeroMessage');
 
 // Variable to contain current % of tip
 let CurrentPercenateTip = 0;
@@ -19,10 +20,20 @@ tipButton.forEach((element) =>
         CurrentPercenateTip = +e.target.value;
         e.target.classList.add('active');
         calculateOutput();
+        removeCustomPercentage();
     })
 );
 
-numberofpeople.addEventListener("input", () => {
+numberOfPeople.addEventListener("input", () => {
+    if (numberOfPeople.value == 0) {
+        zeroMessage.classList.add("zeroValue");
+        zeroMessage.classList.remove("whiteColor");
+        numberOfPeople.classList.add("zeroValueBorder");
+    } else {
+        zeroMessage.classList.remove("zeroValue");
+        zeroMessage.classList.add("whiteColor");
+        numberOfPeople.classList.remove("zeroValueBorder");
+    }
     calculateOutput();
 }
 );
@@ -32,39 +43,33 @@ billValue.addEventListener("input", () => {
 }
 );
 
-customPercentage.addEventListener("focus", (e) => {
-    CurrentPercenateTip = +e.target.value;
-    customPercentage.classList.add('activeCustomButton');
-    removeActive();
-    calculateOutput();
-})
-
 customPercentage.addEventListener("input", (e) => {
     CurrentPercenateTip = +e.target.value;
     removeActive();
+    customPercentage.classList.add("activeCustomButton");
     calculateOutput();
 })
 
 buttonReset.addEventListener("click", () => {
-    numberofpeople.value = 1;
+    numberOfPeople.value = 1;
     billValue.value = 0;
-    CurrentPercenateTip = 5;
+    CurrentPercenateTip = 0;
     calculateOutput();
     removeActive();
 })
 
 function calculateOutput() {
-    if (numberofpeople.value == 0) {
+    if (numberOfPeople.value == 0) {
         tipPersonAmount = 0;
         totalPersonAmount = 0;
     } else {
         tipPersonAmount = (
-            (billValue.value / numberofpeople.value) /
+            (billValue.value / numberOfPeople.value) /
             100 *
             CurrentPercenateTip
         ).toFixed(2);
         totalPersonAmount = (
-            Number(billValue.value / numberofpeople.value) +
+            Number(billValue.value / numberOfPeople.value) +
             Number(tipPersonAmount)
         ).toFixed(2);
     }
@@ -77,4 +82,8 @@ function removeActive() {
     for (let i = 0; i < tipButton.length; i++)
         tipButton[i].classList.remove("active");
     customPercentage.classList.remove("activeCustomButton");
+}
+
+function removeCustomPercentage() {
+    customPercentage.value = "";
 }

@@ -36,7 +36,9 @@
             </div>
         </div>
         <div class="block">
-            <div class="title title--grey">Number of People</div>
+            <div class="title title--grey displayFlex">Number of People
+                <div class="zeroMessage whiteColor">Can't be zero</div>
+            </div>
             <div class="insert">
                 <input type="number" oninput="this.value = Math.round(this.value);"
                     class="insert insert--text numberofpeople insert--background_person" value="1" />

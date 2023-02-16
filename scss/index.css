@@ -187,4 +187,21 @@ body {
   font-size: 13px;
   font-weight: bold;
   color: #7F9D9F;
+}
+
+.displayFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zeroValue {
+  color: #E17457;
+}
+
+.zeroValueBorder {
+  border-color: #E17457;
+}
+
+.whiteColor {
+  color: #FFF;
 }/*# sourceMappingURL=index.css.map */
